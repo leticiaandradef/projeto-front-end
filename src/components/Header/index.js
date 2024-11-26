@@ -1,25 +1,41 @@
-'use client'
-import {useState} from "react";
-import Link from "next/link";
-import styles from "./Header.module.css";
+'use client';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import styles from './Header.module.css';
+import Image from 'next/image';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const openMenu = () => setMenuOpen(true);
+    const closeMenu = () => setMenuOpen(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 600);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${menuOpen ? styles.menuOpen : ''}`}>
+            <div className={styles.logo}>
 
-            <div className={styles.logo}>Sanrio</div>
-
-            <div 
-                className={styles.menuIcon} 
-                onClick={toggleMenu}>
-                ☰
+                {<Image className={styles.img} src='/image/sanrio.png' alt="Imagem Logo sanrio" width={100} height={50}/>}
             </div>
 
-            <ul className={`${styles.lista} ${menuOpen ? styles.open : ""}`}>
+            <div 
+            className={styles.menuIcon} 
+              onClick={menuOpen ? closeMenu : openMenu}>
+                  {menuOpen ? '✖' : '☰'}
+            </div>
+
+            <ul className={`${styles.lista} ${menuOpen ? styles.open : ''}`}>
                 <li>
                     <Link href="/">Início</Link>
                 </li>

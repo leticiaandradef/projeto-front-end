@@ -45,6 +45,12 @@ export default function Header() {
                 <li>
                     <Link href="/personagens">Personagens</Link>
                 </li>
+                <li>
+                    <Link href="/listas">Lista</Link>
+                </li>
+                <li>
+                    <Link href="/props">Props</Link>
+                </li>
             </ul>
         </header>
     );

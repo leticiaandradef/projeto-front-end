@@ -51,6 +51,9 @@ export default function Header() {
                 <li>
                     <Link href="/props">Props</Link>
                 </li>
+                <li>
+                    <Link href="/filtro">Filtro</Link>
+                </li>
             </ul>
         </header>
     );

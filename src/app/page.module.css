@@ -1,10 +1,90 @@
-.img {
-  border-radius: 25px;
-  display: block;
-  margin: auto;
-  margin-top: 50.5px;
-  margin-bottom: auto;
-  border: 1.9px rgb(175, 66, 248) solid;
-  box-shadow: 0 8px 10px rgb(225, 0, 255);
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
-  
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative; /* Necessário para posicionamento dos personagens */
+}
+
+.textContainer {
+  flex: 1;
+  padding: 20px;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.title, .text {
+  border: none;
+  color: #ff0000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.pp{
+  text-align: center;
+  display: flex;
+  color: #7e7e7e;
+  font-family: 'Cantarell';
+  font-style: normal;
+  font-size: 2.3vh;
+  border: none;
+}
+
+.image {
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para os personagens */
+.character {
+  position: absolute;
+  z-index: 10;
+}
+
+.characterTopRight {
+  top: -20px;
+  right: -20px;
+}
+
+.characterBottomLeft {
+  bottom: -20px;
+  left: -20px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .textContainer, .imageContainer {
+    padding: 10px;
+  }
+
+  .characterBottomLeft {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .characterTopRight {
+    position: static;
+    margin-bottom: 10px;
+  }
+}

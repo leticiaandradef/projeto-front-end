@@ -1,5 +1,5 @@
 .header {
-    background-color: #e5c7ff;
+    background-color: hsl(280, 100%, 87%);
     color: #9613f4;
     border-bottom: 2px solid #c300ff;
     padding: 10px 20px;
@@ -18,10 +18,10 @@
 
 .logo {
     font-family: 'Cursive';
-    font-size: 28px;
+    size: 50px;
     color: #aa00ff;
     font-weight: bold;
-    padding-bottom: 10px;
+
 }
 
 .logo:hover{
@@ -33,6 +33,7 @@
 }
 
 .open {
+    font-size: 1vw;
     list-style: none;
     display: flex; 
     position: absolute;
@@ -59,6 +60,7 @@
     }
 
     .lista {
+        font-size: 1vh;
         list-style: none;
         display: flex;
         position: static;

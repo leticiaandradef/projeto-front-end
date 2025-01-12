@@ -44,3 +44,11 @@
     margin-left: 20vw;
     margin-right: 20vw;
 }
+
+.img{
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: auto;
+}
